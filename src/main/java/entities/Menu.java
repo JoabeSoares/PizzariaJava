@@ -1,46 +1,30 @@
 package entities;
 
-import org.w3c.dom.ls.LSOutput;
-
+import java.util.ArrayList;
 import java.util.List;
-import java.util.Scanner;
 
 public class Menu {
+    // Criando a lista de pizzas
+    List<String> listaPizzas = new ArrayList<>();
+
+    // Adicionando as pizzas
+    public void addPizza(String pizza) {
+        listaPizzas.add(pizza);
+    }
+
+    public void removePizza(String pizza) {
+        listaPizzas.remove(pizza);
+    }
+
+    public List<String> getListaPizzas() {
+        return listaPizzas;
+    }
+
+    public void setListaPizzas(List<String> listaPizzas) {
+        this.listaPizzas = listaPizzas;
+    }
+
     public Menu() {
-
     }
-
-//    public void menuPizza() {
-//        System.out.println("Escolha o sabor da sua pizza: \n" +
-//                "1 - Calabresa\n"+
-//                "2 - Pepperoni\n"+
-//                "3 - Carne de sol\n");
-
-
-
-//    public void tamanhoPizza() {
-//        System.out.println("Escolha o tamanho da sua pizza: \n"+
-//                "Grande\n"+
-//                "Média\n"+
-//                "Pequena\n");
-//
-//    }
-
-    // Adicionar sabor
-    Sabor sabor = new Sabor();
-    public void printMenu(){
-    }
-
-    // Receber um input do usuário e retornar uma pizza com o sabor escolhido
-    public String saboresPizza;
-    public void userOption() {
-        System.out.println("Escolha o sabor da sua pizza: ");
-        Scanner scanner = new Scanner(System.in);
-        String option = scanner.nextLine();
-        saboresPizza = option;
-        sabor.addSabor(option);
-        scanner.close();
-    }
-
-
 }
+
